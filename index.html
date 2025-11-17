@@ -4,194 +4,195 @@
   <meta charset="UTF-8" />
   <title>Linux Command Practice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="img/favicon.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+
+  <!-- Google font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap">
-<style>
-  /* Page background and layout */
-  body {
-    margin: 0;
-    padding: 0;
-    background: #f0f4f8; /* light grey-blue */
-    font-family: "Fira Code", monospace;
-    color: #1e293b;
-    display: flex;
-    justify-content: center;
-  }
 
-  .app {
-    width: 100%;
-    max-width: 900px;
-    padding: 24px;
-    box-sizing: border-box;
-  }
-
-  /* Modern header */
-  .app-header {
-    padding-bottom: 16px;
-    position: sticky;
-    top: 0;
-    background: #f0f4f8;
-    z-index: 50;
-  }
-
-  .app-header h1 {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin: 0 0 8px;
-  color: #0f172a;
-  }
-
-  .app-header p {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-size: 15px;
-  }
-
-  .hint {
-    font-size: 15px;
-    margin-top: 6px;
-    color: #0369a1; /* blue accent */
-  }
-
-  .hint-box {
-  background: #e5edf7;
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin-top: 8px;
-  border: 1px solid #cbd5e1;
- }
-
-  /* Terminal card container */
-  .terminal-card {
-  background: #0b1220;
-  color: #e2e8f0;
-  margin-top: 18px;
-  border-radius: 14px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
-  border: 1px solid #1f2937;
-  overflow: hidden;
-}
-
-  /* Top mac-style dots bar */
-  .terminal-bar {
-    background: #0f1a2b;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid #0f172a;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px; 
-  }
-
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 999px;
-  }
-  .dot.red { background: #ef4444; }
-  .dot.yellow { background: #facc15; }
-  .dot.green { background: #22c55e; }
-
-  .terminal-title {
-    margin-left: 12px;
-    font-size: 14px;
-    color: #94a3b8;
-  }
-
-  /* Terminal output area */
-  .terminal-output {
-    padding: 14px;
-    font-size: 15px;
-    line-height: 1.5;
-    max-height: 65vh;
-    overflow-y: auto;
-    white-space: pre-wrap;
-  }
-
-  .line {
-    margin: 4px 0;
-  }
-
-  /* Input line styling */
-  .input-line {
-    display: flex;
-    padding: 12px;
-    border-top: 1px solid #0f172a;
-  }
-
-  #prompt {
-    margin-right: 6px;
-    color: #22c55e; 
-  }
-
-  .prompt-inline {
-    color: #22c55e;
-    margin-right: 4px;
-  }
-
-  #cmd {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #e2e8f0;
-    font-family: inherit;
-    font-size: 15px;
-  }
-
-  .command {
-    color: #38bdf8;
-    font-weight: 600;
-  }
-
-  #prompt::after {
-  content: "";
-  display: inline-block;
-  width: 7px;
-  height: 1.1em;
-  margin-left: 2px;
-  background: #22c55e;
-  animation: blink 1s steps(2, start) infinite;
-  }
-
-  @keyframes blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; } 
-  }
-  
-  code {
-  background: #e2e8f0;
-  color: #0f172a;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 0.95em;
-  font-family: "Fira Code", monospace;
-  border: 1px solid #cbd5e1;
-  }
-
-  .footer {
-  margin-top: 24px;
-  font-size: 12px;
-  color: #94a3b8;
-  text-align: center;
-  }
-</style>
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app">
     <header class="app-header">
-      <h1>Linux Practice - 247TC </h1>
+      <h1>Linux Practice - 247 TC</h1>
+      <nav class="lesson-tabs">
+       <button class="lesson-tab active" data-lesson="basics">Lesson 1: Linux Basics Command</button>
+       <button class="lesson-tab" data-lesson="enum">Lesson 2: Hacking tools</button>
+      </nav>
       <div class="hint-box">
-       <p>Follow Praju with commands. Only use the specified commands. It's not a real Terminal. </p>
-       <p class="hint">Type: <code>'help'</code> to see the available commands.</p>
-       <p class="hint">Type: <code>'clear'</code> to clear the terminal</p>
+        <p>Use the tap above to learn the command taught today.</p>
+        <p>lesson-1 is for basic commands</p>
+        <p>lesson-2 is for hacking commands.</p>
+        <p class="hint">Type: <code>help</code> for available commands.</p>
+        <p class="hint">Type: <code>clear</code> to clear the terminal.</p>
       </div>
     </header>
+    
+    <!-- NEW: two-column layout -->
+    <div class="app-layout">
+      <!-- LEFT: Flowchart -->
+      <aside class="flow-panel lesson-panel active" data-lesson="basics">
+    <h2 class="flow-title">Basics Flow</h2>
 
-    <main>
+    <div class="flow-step" data-step="where">
+      <div class="flow-step-number">1</div>
+      <div class="flow-step-body">
+        <h3>Where am I?</h3>
+        <p>Use <code>pwd</code> to see your current folder.</p>
+        <p class="flow-example">Try: <code>pwd</code></p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="list">
+      <div class="flow-step-number">2</div>
+      <div class="flow-step-body">
+        <h3>What is here?</h3>
+        <p>Use <code>ls</code> to list files and folders.</p>
+        <p class="flow-example">Try: <code>ls</code></p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="details">
+      <div class="flow-step-number">3</div>
+      <div class="flow-step-body">
+        <h3>See more details</h3>
+        <p>Use <code>ls -l</code> for permissions &amp; sizes.</p>
+        <p class="flow-example">Try: <code>ls -l</code></p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="move">
+      <div class="flow-step-number">4</div>
+      <div class="flow-step-body">
+        <h3>Move into folders</h3>
+        <p>Use <code>cd</code> to change directory.</p>
+        <p class="flow-example">Try: <code>cd Downloads</code></p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="read">
+      <div class="flow-step-number">5</div>
+      <div class="flow-step-body">
+        <h3>Read a file</h3>
+        <p>Use <code>cat</code> to display file contents.</p>
+        <p class="flow-example">Try: <code>cat readmePLZ.txt</code></p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="who">
+      <div class="flow-step-number">6</div>
+      <div class="flow-step-body">
+        <h3>Who am I?</h3>
+        <p>Use <code>id</code> to see your user info.</p>
+        <p class="flow-example">Try: <code>id</code></p>
+      </div>
+    </div>
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="unzip">
+    <div class="flow-step-number">7</div>
+      <div class="flow-step-body">
+        <h3>unzip a file.</h3>
+        <p>Use <code>unzip</code> to unzip the file</p>
+        <p class="flow-example">Try: <code>unzip important.txt</code></p>
+    </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="wc">
+    <div class="flow-step-number">8</div>
+      <div class="flow-step-body">
+        <h3>count contents</h3>
+        <p>Use <code>wc</code> to count the number of words</p>
+        <p class="flow-example">Try: <code>wc -w hackeme.txt</code></p>
+    </div>
+    </div>
+
+    
+  </aside>
+   
+      <!---right: terminal-->
+  <aside class="flow-panel lesson-panel" data-lesson="enum">
+    <h2 class="flow-title">Enumeration Flow</h2>
+
+    <div class="flow-step" data-step="discover">
+      <div class="flow-step-number">1</div>
+      <div class="flow-step-body">
+        <h3>Discover hosts</h3>
+        <p>Goal: find live machines on the network.</p>
+        <p class="flow-example">
+          Example: <code>sudo netdiscover -r 10.38.1.0</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="verify">
+      <div class="flow-step-number">2</div>
+      <div class="flow-step-body">
+        <h3>Verify target is alive</h3>
+        <p>Goal: make sure the host responds.</p>
+        <p class="flow-example">
+          Example: <code>ping -c 3 10.38.1.117</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="scan">
+      <div class="flow-step-number">3</div>
+      <div class="flow-step-body">
+        <h3>Scan ports &amp; services</h3>
+        <p>Goal: see which services are open.</p>
+        <p class="flow-example">
+          Example: <code>nmap -sV -O 10.38.1.117</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="attack">
+      <div class="flow-step-number">4</div>
+      <div class="flow-step-body">
+        <h3>Attack login / passwords</h3>
+        <p>Goal: try leaked passwords on the login page.</p>
+        <p class="flow-example">
+          Example: <code>hydra -l hari -P hackme.txt 10.38.1.117 ...</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="flow-arrow">↓</div>
+
+    <div class="flow-step" data-step="privesc">
+      <div class="flow-step-number">5</div>
+      <div class="flow-step-body">
+        <h3>Privilege escalation</h3>
+        <p>Goal: find SUID binaries &amp; paths to root.</p>
+        <p class="flow-example">
+          Example: <code>find / -perm -4000 -type f -exec ls -l {} \; 2>/dev/null</code>
+        </p>
+      </div>
+    </div>
+  </aside>
+    <main class="terminal-panel">
       <div class="terminal-card">
         <div class="terminal-bar">
           <span class="dot red"></span>
@@ -200,286 +201,23 @@
           <span class="terminal-title">student@practice:~</span>
         </div>
 
-        <!-- only this box is cleared -->
         <div id="terminal-output" class="terminal-output"></div>
 
         <div id="input-line" class="input-line">
-          <span id="prompt">student@practice~$</span>
+          <span id="prompt">student@practice:~$</span>
           <input id="cmd" autocomplete="off" autofocus />
         </div>
       </div>
     </main>
-    <footer class="footer">
-     Linux Practice – 247TC · v1.0 · Built for training only
-    </footer>
   </div>
+  
+  <footer class="footer">
+      Linux Practice – 247TC · v1.0 · Built for training only
+  </footer>
 
- <script>
-  // 1. Define the commands and fixed outputs
-
-  const helpLines = [
-  "",
-  '<span class="command">ls</span>          list all files and directories.',
-  '<span class="command">pwd</span>         Prints your working directory.',
-  '<span class="command">cd</span>          Change the directory',
-  '<span class="command">cat</span>         Read the contents of the file.',
-  '========================================================================',
-  '<span class="command">netdiscover</span> Secure remote access to another machine.',
-  '<span class="command">ping</span>        Test connectivity.',
-  '<span class="command">nmap</span>        Search for files and directories.',
-  '<span class="command">hydra</span>       Display the contents of a file.',
-  '<span class="command">base64</span>      List files and directories in the current folder.',
-  '<span class="command">ssh</span>         Secure remote access to another machine.',
-  '<span class="command">find</span>        Search for files or directories in the system.',
-  ""
-];
-
-// === show ip configuration===   
-const ifconfLines=[
-"eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500",
-"inet 10.38.1.110  netmask 255.255.255.0  broadcast 10.38.1.255",
-"inet6 fe80::a00:27ff:fe93:20de  prefixlen 64  scopeid 0x20<link>",
-"ether 08:00:27:93:20:de  txqueuelen 1000  (Ethernet)",
-"RX packets 2  bytes 650 (650.0 B)",
-"RX errors 0  dropped 0  overruns 0  frame 0",
-"TX packets 27  bytes 3340 (3.2 KiB)",
-"TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0",
-"                        ",
-"lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536",
-"inet 127.0.0.1  netmask 255.0.0.0",
-"inet6 ::1  prefixlen 128  scopeid 0x10<host>",
-"loop  txqueuelen 1000  (Local Loopback)",
-"RX packets 8  bytes 480 (480.0 B)",
-"RX errors 0  dropped 0  overruns 0  frame 0",
-"TX packets 8  bytes 480 (480.0 B)",
-"TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0",
-];
-// =====  sudo netdiscover -r 10.38.1.0  =====
-const netdiscoverLines = [
-  "net discover:",
-  "Currently scanning: Finished!   |   Screen View: Unique Hosts",
-  "",
-  "2 Captured ARP Req/Rep packets, from 2 hosts.   Total size: 120",
-  "--------------------------------------------------------------------------",
-  "IP            At MAC Address        Count   Len   MAC Vendor / Hostname",
-  "--------------------------------------------------------------------------",
-  "10.38.1.1     08:00:27:4c:73:a9      1      60    PCS Systemtechnik GmbH",
-  "10.38.1.117   08:00:27:11:89:84      1      60    PCS Systemtechnik GmbH"
-];
-
-// ====== ping -c 3 10.38.1.117 ====
-
-const pingLines = [
-  "PING 10.38.1.117 (10.38.1.117) 56(84) bytes of data",
-  "64 bytes from 10.38.1.117: icmp_seq=1 ttl=64 time=1.73 ms",
-  "64 bytes from 10.38.1.117: icmp_seq=2 ttl=64 time=1.13 ms",
-  "64 bytes from 10.38.1.117: icmp_seq=3 ttl=64 time=0.885 ms",
-  "                                                          ",
-  "--- 10.38.1.117 ping statistics ---",
-  "3 packets transmitted, 3 received, 0% packet loss, time 2032ms",
-  "rtt min/avg/max/mdev = 0.885/1.246/1.725/0.352 ms",
-]
-
-// =====  hydra -l hari -P pass.txt ... -V  =====
-const hydraLines = [
-  "Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).",
-  "",
-  "Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-11-12 22:39:44",
-  "[DATA] max 7 tasks per 1 server, overall 7 tasks, 7 login tries (l:1/p:7), ~1 try per task",
-  "[DATA] attacking http-post-form://10.38.1.117:80/login.php:user=^USER^&pass=^PASS^:Invalid credentials.",
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "rednosedude" - 1 of 7 [child 0] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "clownpants" - 2 of 7 [child 1] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "balloonman" - 3 of 7 [child 2] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "redNose123" - 4 of 7 [child 3] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "silly123" - 5 of 7 [child 4] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "funnyw00d" - 6 of 7 [child 5] (0/0)',
-  '[ATTEMPT] target 10.38.1.117 - login "clown" - pass "WL" - 7 of 7 [child 6] (0/0)',
-  "[80][http-post-form] host: 10.38.1.117   login: <code>hari</code>   password: <code>laureDai247</code>",
-  "",
-  "1 of 1 target successfully completed, 1 valid password found",
-  "Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-11-12 22:39:45"
-];
-
-// =====  nmap -sV -O 10.38.1.117  =====
-const nmapLines = [
-  "Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-13 19:46 GMT",
-  "Nmap scan report for 10.38.1.117",
-  "Host is up (0.0014s latency).",
-  "Not shown: 998 closed tcp ports (reset)",
-  "PORT      STATE SERVICE VERSION",
-  "22/tcp    open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.14 (Ubuntu Linux; protocol 2.0)",
-  "80/tcp    open  http    nginx 1.24.0 (Ubuntu)",
-  "MAC Address: 08:00:27:11:89:84 (PCS Systemtechnik/Oracle VirtualBox virtual NIC)",
-  "Device type: general purpose",
-  "Running: Linux 4.X|5.X",
-  "OS CPE: cpe:/o:linux:linux_kernel:4  cpe:/o:linux:linux_kernel:5",
-  "OS details: Linux 4.15 - 5.19",
-  "Network Distance: 1 hop",
-  "Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel",
-  "",
-  "OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .",
-  "Nmap done: 1 IP address (1 host up) scanned in 21.31 seconds"
-];
-
-// ==== list files in Downloads =====
-const listLine =[
-  "total 20",
-  "-rw-rw-r-- 1 praju praju 4614 Nov 16 17:28 important.zip",
-  "-rw-rw-r-- 1 praju praju 8309 Oct  5 15:53 piggy77.ovpn",
-];
-
-//=== unzip the zipped file =====
-const unzipLines =[
-  "Archive:  important.zip",
-  "inflating: hackme.txt",              
-  "inflating: readmePLZ.txt",
-];
-
-// ===== cat readme file====
-const catLines =[
-  "WELL DOne on getting up to here.",
-  "                                ",
-  "You have now a readmePLZ.txt and hackme.txt file.",
-  "                                                 ",
-  "HOPE you have found the username because hackme.txt file contains 1000s of leaked password.",
-  "You are going to use this password to crack into login page.",
-  "                        ",
-  "ENJOY.",
-];
-
-// ====wordcount of hackme.txt====
- const wcLines =[
-  "1046 hackme.txt",
- ];
-
-// ====base64 decode====
-const baseLines =[
-  "V3ryStr0ngPa55",
-];
-
-// ==== show rajesh ID===
-const idLines =[
-  "uid=1002(rajesh) gid=1002(rajesh) groups=1002(rajesh)",
-];
-
-// == rajesh file ===
-const readLines =[
-  "Congrats on getting into the server.",
-  "       ",
-  "The final flag is located in /root/final_flag.txt.",
-  "   ",
-  "This folder is inside the root user.",
-  "  ",
-  "Find a way to root access to get the final flag. [PRIVILAGE ESCALATION]",
-];
-
-// ===find SUID ====
-const findLines =[
-  "-rwsr-xr-x 1 root root 64152 May 30  2024 /usr/bin/passwd",
-  "-rwsr-xr-x 1 root root 44760 May 30  2024 /usr/bin/chsh",
-  "-rwsr-xr-x 1 root root 39296 Jun  5 12:17 /usr/bin/umount",
-  "-rwsr-xr-x 1 root root 72792 May 30  2024 /usr/bin/chfn",
-  "-rwsr-xr-x 1 root root 39296 Apr  8  2024 /usr/bin/fusermount3",
-  "-rwsr-xr-x 1 root root 277936 Jun 25 12:42 /usr/bin/sudo",
-  "-rwsr-xr-x 1 root root 51584 Jun  5 12:17 /usr/bin/mount",
-  "-rwsr-xr-x 1 root root 76248 May 30  2024 /usr/bin/gpasswd",
-  "-rwsr-xr-x 1 root root 55680 Jun  5 12:17 /usr/bin/su",
-  "-rwsr-xr-x 1 root root 40664 May 30  2024 /usr/bin/newgrp",
-  "-rwsr-xr-x 1 root root 342632 Aug 26 13:49 /usr/lib/openssh/ssh-keysign",
-  "-rwsr-xr-x 1 root root 18736 Dec  2  2024 /usr/lib/polkit-1/polkit-agent-helper-1",
-  "-rwsr-xr-- 1 root messagebus 34960 Aug  9  2024 /usr/lib/dbus-1.0/dbus-daemon-launch-helper",
-  "-rwsr-xr-x 1 root root 16048 Nov  5 16:26 /usr/local/bin/pwnme",
-];
-
-  const commands = {
-    help: helpLines.join("\n"),
-    ls: "Documents  Downloads  Picture Notepad notes.txt",
-    pwd: "/home/student",
-    whoami: "student",
-    clear: "",
-    "ifconfig": ifconfLines.join("\n"),
-    "sudo netdiscover -r 10.38.1.0": netdiscoverLines.join("\n"),
-    "ping -c 3 10.38.1.117": pingLines.join("\n"),
-    "hydra -l hari -P hackme.txt 10.38.1.117 http-post-form '/login.php:user=^USER^&pass=^PASS^:Invalid credentials.' -V":hydraLines.join("\n"),
-    "nmap -sV -O 10.38.1.117": nmapLines.join("\n"),
-    "ls -l":listLine.join("\n"),
-    "unzip important.zip":unzipLines.join("\n"),
-    "cat readmePLZ.txt":catLines.join("\n"),
-    "wc -w hackme.txt":wcLines.join("\n"),
-    "echo 'VjNyeVN0cjBuZ1BhNTUK' | base64 -d":baseLines.join("\n"),
-    "id":idLines.join("\n"),
-    "cat readme.txt":readLines.join("\n"),
-    "find / -perm -4000 -type f -exec ls -l {} \\; 2>/dev/null":findLines.join("\n"),
-    };
-
-  const outputEl = document.getElementById("terminal-output");
-  const cmdInput  = document.getElementById("cmd");
-
-  // For normal output lines
-  function addOutputLine(text = "") {
-    const line = document.createElement("div");
-    line.className = "line";
-    line.innerHTML = text;
-    outputEl.appendChild(line);
-    outputEl.scrollTop = outputEl.scrollHeight;
-  }
-
-  // For the student's command line (prompt + command)
-  function addCommandLine(commandText = "") {
-    const line = document.createElement("div");
-    line.className = "line";
-
-    const promptSpan = document.createElement("span");
-    promptSpan.className = "prompt-inline";
-    promptSpan.textContent = "student@practice$";
-
-    const space = document.createTextNode(" ");
-
-    const cmdSpan = document.createElement("span");
-    cmdSpan.textContent = commandText;
-
-    line.appendChild(promptSpan);
-    line.appendChild(space);
-    line.appendChild(cmdSpan);
-
-    outputEl.appendChild(line);
-    outputEl.scrollTop = outputEl.scrollHeight;
-  }
-
-  function runCommand(command) {
-    const trimmed = command.trim();
-
-    // always show what the student typed
-    addCommandLine(trimmed);
-
-    if (!trimmed) return;
-
-    if (trimmed === "clear") {
-      // only clear the terminal-output box, not the header
-      outputEl.innerHTML = "";
-      return;
-    }
-
-    if (Object.prototype.hasOwnProperty.call(commands, trimmed)) {
-      const output = commands[trimmed];
-      output.split("\n").forEach(line => addOutputLine(line));
-    } else {
-      addOutputLine("Command not available.");
-    }
-  }
-
-  cmdInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-      const value = cmdInput.value;
-      cmdInput.value = "";
-      runCommand(value);
-    }
-  });
-
-  // keep focus on input when user clicks anywhere in the app
-  document.querySelector(".app")
-    .addEventListener("click", () => cmdInput.focus());
-</script>
+  <!-- JS: order matters! -->
+  <script src="commands.js"></script>
+  <script src="flowchart.js"></script>
+  <script src="terminal.js"></script>
 </body>
 </html>
-

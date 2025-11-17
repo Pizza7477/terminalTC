@@ -1,0 +1,317 @@
+/* Page background and layout */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8; /* light grey-blue */
+  font-family: "Fira Code", monospace;
+  color: #1e293b;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Modern header */
+.app-header {
+  padding-bottom: 16px;
+  background: #f0f4f8;
+}
+
+.app-header h1 {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+.lesson-panel {
+  display: none;
+}
+
+.lesson-panel.active {
+  display: block;
+}
+
+.lesson-tabs {
+  margin: 4px 0 6px;
+  display: flex;
+  gap: 8px;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.lesson-tab {
+  border: 1px solid #cbd5e1;
+  background: #e5edf7;
+  color: #0f172a;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.lesson-tab.active {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-color: #0f172a;
+}
+.app-header p {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 15px;
+}
+.top-nav {
+  margin: 6px 0 4px;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 14px;
+}
+.top-nav a {
+  color: #0369a1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.hint {
+  font-size: 15px;
+  margin-top: 6px;
+  color: #0369a1; /* blue accent */
+}
+
+.hint-box {
+  background: #e5edf7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Terminal card container */
+.terminal-card {
+  width: 100%;
+  max-width: 900px;      
+  background: #0b1220;
+  color: #e2e8f0;
+  margin-top: 18px;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
+  border: 1px solid #1f2937;
+  overflow: hidden; 
+}
+
+/* Top mac-style dots bar */
+.terminal-bar {
+  background: #0f1a2b;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #0f172a;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+.dot.red    { background: #ef4444; }
+.dot.yellow { background: #facc15; }
+.dot.green  { background: #22c55e; }
+
+.terminal-title {
+  margin-left: 12px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* Terminal output area */
+.terminal-output {
+  padding: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  max-height: 420px;     
+  overflow-y: auto;      
+  white-space: pre-wrap;
+}
+
+.line {
+  margin: 4px 0;
+}
+
+/* Input line styling */
+.input-line {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #0f172a;
+}
+
+#prompt {
+  margin-right: 6px;
+  color: #22c55e;
+}
+
+.prompt-inline {
+  color: #22c55e;
+  margin-right: 4px;
+}
+
+#cmd {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.command {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Blinking block after the prompt */
+#prompt::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 1.1em;
+  margin-left: 2px;
+  background: #22c55e;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0%, 50%   { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+code {
+  background: #e2e8f0;
+  color: #0f172a;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-family: "Fira Code", monospace;
+  border: 1px solid #cbd5e1;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Layout: flowchart + terminal side by side */
+.app-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* On small screens: stack vertically */
+@media (max-width: 800px) {
+  .app-layout {
+    flex-direction: column;
+  }
+}
+
+/* Flowchart panel */
+.flow-panel {
+  flex: 0 0 320px;
+  max-width: 320px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid #d4d4d8;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.flow-title {
+  margin: 2px 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+/* Terminal column takes more width */
+.terminal-panel {
+  flex: 1 1 auto;   
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+/* Individual steps */
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 9px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid transparent;
+  margin-bottom: 6px;
+  min-height: 110px;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.15s ease;
+}
+
+.flow-step-number {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #94a3b8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.flow-step-body h3 {
+  margin: 0 0 3px;
+  font-size: 13px;
+}
+
+.flow-step-body p {
+  margin: 0 0 2px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.flow-example code {
+  font-size: 11px;
+}
+
+/* Arrow between steps */
+.flow-arrow {
+  text-align: center;
+  font-size: 14px;
+  color: #cbd5f5;
+  margin: 0 0 4px;
+}
+
+/* Highlighted step */
+.flow-step.active {
+  background: #e0edff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+  transform: translate(-1px);
+}
+
+.flow-step.active .flow-step-number {
+  background: #2563eb;
+}
