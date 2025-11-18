@@ -18,7 +18,7 @@ const stepByCommandEnum = {
   "ping -c 3 10.38.1.117": "verify",
   "nmap -sV -O 10.38.1.117": "scan",
   "hydra -l hari -P hackme.txt 10.38.1.117 http-post-form '/login.php:user=^USER^&pass=^PASS^:Invalid credentials.' -V": "attack",
-  "find / -perm -4000 -type f -exec ls -l {} \\; 2>/dev/null": "privesc"
+  "find / -perm -4000 -type f -exec ls -l {} \\; 2>/dev/null": "privesc",
 };
 
 function clearFlowHighlights() {
@@ -42,4 +42,5 @@ function highlightStepForCommand(lesson, commandText) {
   const stepId = map[commandText];
   highlightStep(stepId);
 }
+
 
