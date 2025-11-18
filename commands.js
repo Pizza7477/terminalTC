@@ -20,16 +20,17 @@ const commandsBasics = {
 
   pwd: "/home/student",
 
-  ls: "Documents  Downloads  notes.txt",
+  ls: "Documents  Downloads  Picture readmePLZ.txt notes.txt ",
 
   "ls -l":
     "total 12\n" +
-    "-rw-r--r-- 1 student student  4096 Nov 17 09:12 notes.txt\n" +
-    "drwxr-xr-x 2 student student  4096 Nov 17 09:10 Documents\n" +
-    "drwxr-xr-x 5 student student  4096 Nov 17 09:11 Downloads",
-
-  "cd Documents": "",
-  "ls Documents": "report.txt  todo.txt",
+     "drwxr-xr-x 2 student student  4096 Nov 17 09:10 Documents\n" +
+     "drwxr-xr-x 2 student student  4096 Nov 17 09:10 Downloads\n" +
+     "drwxr-xr-x 2 student student  4096 Nov 17 09:10 Picture\n" +
+     "-rw-r--r-- 1 student student  4096 Nov 17 09:12 readmePLZ.txt\n" +
+     "-rw-r--r-- 1 student student  4096 Nov 17 09:12 notes.txt\n",
+  
+  "cd Downloads": " You have changed to Downloads Directory",
 
   "cat readmePLZ.txt":
     "WELL DOne on getting up to here.\n" +  
@@ -152,4 +153,5 @@ const commandsEnum = {
     "-rwsr-xr-x 1 root root 16048 Nov  5 16:26 <code>/usr/local/bin/pwnme</code>"
   ].join("\n")
 };
+
 
