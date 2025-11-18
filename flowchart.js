@@ -5,9 +5,8 @@ const stepByCommandBasics = {
   pwd: "where",
   ls: "list",
   "ls -l": "details",
-  "cd Documents": "move",
-  "ls Documents": "move",
-  "cat notes.txt": "read",
+  "cd Downloads": "move",
+  "cat readmePLZ.txt": "read",
   id: "who",
   "unzip important.txt": "unzip",
   "wc -w hackme.txt": "wc",
@@ -43,3 +42,4 @@ function highlightStepForCommand(lesson, commandText) {
   const stepId = map[commandText];
   highlightStep(stepId);
 }
+
