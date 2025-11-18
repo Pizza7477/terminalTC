@@ -57,8 +57,6 @@ const commandsBasics = {
 
 // ===== LESSON 2: ENUMERATION LAB =====
 
-// ===== LESSON 2: ENUMERATION LAB =====
-
 const helpLinesEnum = [
   "",
   "<span class='command'>sudo netdiscover</span>  Discover hosts in the network",
@@ -153,5 +151,6 @@ const commandsEnum = {
     "-rwsr-xr-x 1 root root 16048 Nov  5 16:26 <code>/usr/local/bin/pwnme</code>"
   ].join("\n")
 };
+
 
 
